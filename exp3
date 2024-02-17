@@ -1,0 +1,17 @@
+package main
+
+import (
+	"fmt"
+)
+
+func VersionString() string {
+	return "go1.0"
+}
+
+func main() {
+	var a string
+	a = VersionString()
+
+	fmt.Print("Merhaba Dünya!" + a)
+	//sum := func(a, b int) int { return a+b } (3, 4)
+}
