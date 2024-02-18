@@ -1,17 +1,75 @@
+//****  file, function, block scope 
+//****  masking  , name lookup
+
 package main
+import "fmt"
 
-import (
-	"fmt"
-)
+var a int = 10
 
-func VersionString() string {
-	return "go1.0"
+//    b: = 20     ERROR  : Global alanda := kullanılamaz. 
+
+func foo() {
+	fmt.Println(" a file scope (a foo da tanımlanmadigi için glabal a geçerli ) a= ", a)
 }
 
 func main() {
-	var a string
-	a = VersionString()
+	var a int = 20
+	fmt.Println("func scope (main) a= ", a)
 
-	fmt.Print("Merhaba Dünya!" + a)
-	//sum := func(a, b int) int { return a+b } (3, 4)
+	if true {
+		var a int = 30
+                var b int = 11
+		fmt.Println("block scope   a= ", a)
+		fmt.Println("block scope   b= ", b)
+	}
+
+	fmt.Println("func scope (main) a= ", a)
+
+	foo()
+
+	fmt.Println("func scope (main) a= ", a)
+
+  //  fmt.Println("b= ", b)   // compile sırasında  error b tanımlanmamış. yukarıda if blogundaki b,  block scope yani sadece o blokta kullanılabilir.
+
 }
+
+/*  ekran çıktısı
+func scope (main) a=  20
+block scope   a=  30
+block scope   b=  11
+func scope (main) a=  20
+ a file scope (a foo da tanımlanmadigi için glabal a geçerli ) a=  10
+func scope (main) a=  20
+ 
+*/
+
+
+// ***    type conversion ***
+package main
+import "fmt"
+func main() {
+	var a int16 = 130
+	var b int8
+	b = int8(a)
+	fmt.Println(b) 
+
+  //  -126 yazar     130 int8 sınırları içinde değildir.
+  //  büyük tipten küçük tipe dönüşümde dikkatli olunması gerekir...
+
+// istisna numericten stringe dönüştürme  ascii karakter için geçerli
+  n   := 65
+  str := string(n)
+  fmt.Printf("%v %T", str, str)    // Ekrana  A string yazar.
+
+// sayilari dizgeler dönüştüren metotlar vardır..
+// örnek :  strconv paketindeki  strconv.Itoa(12)
+
+}
+
+/*   veri tipi bool ve rune  aliasdır. ===>  bool alias uint8     rune alias int32
+    a := 30      // default  a   int
+    b := 10.2    //   ""     b   float64  
+*/
+
+
+
