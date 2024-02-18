@@ -4,9 +4,10 @@
 package main
 import "fmt"
 
-var a int = 10
+var a int = 10           // Baska paketlerden  görülümez (File scope)
+var Yas int = 20        //  Baska paketlerden de görülebilir . (degisken adının ilk karakteri (Y) büyük harf olduğu için) 
 
-//    b: = 20     ERROR  : Global alanda := kullanılamaz. 
+//    b := 20     ERROR  : Global alanda := kullanılamaz. 
 
 func foo() {
 	fmt.Println(" a file scope (a foo da tanımlanmadigi için glabal a geçerli ) a= ", a)
