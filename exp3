@@ -71,16 +71,31 @@ func main() {
 }
 
 /*   veri tipi bool ve rune  aliasdır. ===>  bool alias uint8     rune alias int32
+
     a := 30      // default  a   int
     b := 10.2    //   ""     b   float64  
 */
 
 
 /**
-  x :=5
-  y :=10
+  x := 10
+  y :=  4
+	fmt.Printf("%v, %v", x, y)
   y,x = x,y
+	fmt.Printf("%v, %v", x, y)
+ 
+   a := 10/4
+   b := float64(10/4)
+   c := 10.0 /4 
+	  fmt.Printf("%T, %v", a, a)
+	  fmt.Printf("%T, %v", b, b)
+  
 
+  x, y :=  15.0 , 3
+	  fmt.Printf("%T, %v", x/y)
+	  fmt.Printf("%T, %v", (15.0/3), ) (15.0/3)
+
+go teknik ingilizce   %  : remainder operatoru
 
 
 
