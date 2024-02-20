@@ -199,8 +199,16 @@ print x=1+3   ???????????
 ***  GOda bir satırda bir statement olabilir
 
 Go da   x++ ,  x--    nedir ?????
+var int x := 10
+	fmt.Println(x++)   // unexpected error
 
+/**** CONSTANTS
+const  : compile time sırasında
+var    : Runtime      ""
 
+x:=5
+const y=x  //    Error   x:=5 runtime da yapilan bir işlem.  const y=x   compile time sırasında x belli değil.. 
+o zaman const a  = ??    (?? burada sabit olmalı)
 
 
 
