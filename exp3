@@ -210,7 +210,11 @@ x:=5
 const y=x  //    Error   x:=5 runtime da yapilan bir işlem.  const y=x   compile time sırasında x belli değil.. 
 o zaman const a  = ??    (?? burada sabit olmalı)
 
+const x = 5
+y = x   ????
  
+
+/***    TYPELESS CONSTANTS
 /*  Code A
 const x int8  = 4
 var   y int16 = 10
@@ -227,7 +231,32 @@ var   y int16 = 10
 
 Code A ile Code B  yi    Açıkla.  Aradaki fark var mı ? 
 
+conts x = 6.3 + 2
+fmt.Printf("%T, %v", x, x)
 
+conts x int16  = (6.3 + 2.7)
+fmt.Printf("%T, %v", x, x)
+
+conts x = 6.3 
+conts y = 5 
+fmt.Printf("%T, %v", x+y, x+y) 
+
+const x float64 = 5.25
+y := 4 + x
+fmt.Printf("%T, %v", y, y)
+
+
+/***    CONSTANTS   showing / masking
+
+package main
+
+const x = 5
+
+func main() {
+  const x = 33
+  fmt.Printf("%T, %v", x, x)
+
+} 
 
 
 
