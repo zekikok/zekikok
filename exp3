@@ -113,7 +113,7 @@ Expression Statement   print 5*5
 x = 1+3
 print x=1+3   ???????????
 
-***  GOda bir satırda 2 statement olamaz..
+***  GOda bir satırda bir statement olabilir
 
 Go da   x++ ,  x--    nedir ?????
 
