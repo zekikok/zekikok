@@ -70,8 +70,24 @@ func main() {
 
 }
 
-/*   veri tipi bool ve rune  aliasdır. ===>  bool alias uint8     rune alias int32
+/*  GO  DATA TYPES (Veri Tipleri) 
+ BASIC TYPES
+     uint8, uint16, uint32, uint64
+      int8,  int16,  int32,  int64
+     float32, float64
+     complex64, complex128
 
+     byte : alias for uint8     
+     rune : alias for int32
+
+  STRING  TYPES
+  BOOLEAN TYPES
+
+  COMPOSITE
+     Array, Slice, Map, Struct, Pointer, Function, Iterface, Channel 
+
+
+/*********
     a := 30      // default  a   int
     b := 10.2    //   ""     b   float64  
 */
