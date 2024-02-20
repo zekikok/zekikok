@@ -1,5 +1,87 @@
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+	Tür (type): Bir değişkenin içerisindeki değerin hangi formatta tutulduğunu ve bellekte ne kadar uzunlukta (byte) yer
+	ayrılacağını belirten kavramdır. Go'da genel olarak türler şu şekilde kategorize edilmiştir:
+	- Boolean types
+	- Numeric types
+	- String types
+	- Derived types
+
+	Bu kategoriler konular içerisinde ele alınacaktır
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+    Anahtar Notlar: Go'da bazı durumlar sistemden sisteme değişiklik gösterebilmektedir. Örneğin int türünün uzunluğu
+    bazı sistemlerde 4 byte iken, bazı sistemlerde 8 byte olarak ele alınmaktadır. Şüphesiz farklı byte uzunluğunda da
+    olabilir. Bu duruma genel olarak "implementation specified/defined/dependent" denilmektedir.
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+    Sayısal (Numeric) türler şunlardır:
+
+    Tür ismi                    Uzunluğu (byte)
+    int8                            1
+    uint8                           1
+    int16                           2
+    uint16                          2
+    int32                           4
+    uint32                          4
+    int64                           8
+    uint64                          8
+    byte                            1
+    rune                            4
+    uint                           4/8
+    int                            4/8
+
+    float32                         4
+    float64                         8
+    complex64                       8
+    complex128                     16
+
+    bool                            1
+
+    - Sayısal türler (numeric types) genel olarak iki gruba ayrılır: tamsayı türleri (integer/integral types),
+    gerçek sayı türleri (real types/floating point types)
+
+    - Tamsayı türleri işaretli (signed) ve işaretsiz (unsigned) olarak ayrı ayrı bulundurulmuştur ve ikiye tümleme formatında
+    çalışırlar.
+
+    - Gerçek sayı türleri ise IEEE754 formatını kullanırlar
+
+    - complex64 türü gerçek (real) ve sanal (imaginary) kısımları float32 türünden olan karmaşık sayıyı temsil eder
+
+    - complex128 türü gerçek (real) ve sanal (imaginary) kısımları float64 türünden olan karmaşık sayıyı temsil eder
+
+    - int8, uint8, int16, uint16, int32, uint32, int64, uint64 tamsayı türlerinin uzunlukları sistemden sisteme değişiklik
+    göstermez
+
+    - float32, float64, complex64 ve complex128 türlerinin uzunlukları sistemden sistemden sisteme değişmez.
+
+    - byte türü uint8 türünün ayrı bir ismidir (alias)
+
+    - rune türü int32 türünün ayrı bir ismidir (alias)
+
+    - int ve uint türleri sistem sisteme uzunluğu değişebilen (4 byte veya 8 byte) olan tamsayı türleridir.
+
+    - bool türü 1 byte uzunluğunda, true veya false değerlerinden birini alabilen bir türdür.
+
+    - Yukarıdakiler temel standart türlerdir. Diğer standart türler ayrı ele alınacaktır
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
 //****  file, function, block scope 
-//****  masking, shadowing  , name lookup
+//****  masking /shadowing  ,  name lookup
 
 package main
 import "fmt"
@@ -70,22 +152,6 @@ func main() {
 
 }
 
-/*  GO  DATA TYPES (Veri Tipleri) 
- BASIC TYPES
-     uint8, uint16, uint32, uint64
-      int8,  int16,  int32,  int64
-     float32, float64
-     complex64, complex128
-
-     byte : alias for uint8     
-     rune : alias for int32
-
-  STRING  TYPES
-  BOOLEAN TYPES
-
-  COMPOSITE
-     Array, Slice, Map, Struct, Pointer, Function, Iterface, Channel 
-
 
 /*********
     a := 30      // default  a   int
@@ -119,6 +185,7 @@ Go teknik ingilizce   %  : remainder operatoru
 var int x := 10
 	fmt.Println(x++)
 
+İfade (expression): Sabitlerden, operatörlerden ve değişkenlerden oluşan dizilimlere denir.
 
 Expression ile Statement arasındaki fark
 
