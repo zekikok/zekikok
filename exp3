@@ -210,5 +210,24 @@ x:=5
 const y=x  //    Error   x:=5 runtime da yapilan bir işlem.  const y=x   compile time sırasında x belli değil.. 
 o zaman const a  = ??    (?? burada sabit olmalı)
 
+/*-----
+/*  Code A
+const x int8  = 4
+var   y int16 = 10
+	fmt.Printf("%T, %v", x, x)
+	fmt.Printf("%T, %v", y, y)
+	fmt.Printf("%T, %v", x+y, x+y)
+
+/*  Code B
+const x = 4
+var   y int16 = 10
+	fmt.Printf("%T, %v", x, x)
+	fmt.Printf("%T, %v", y, y)
+	fmt.Printf("%T, %v", x+y, x+y)
+
+Code A ile Code B  yi yorumla .  Aradaki fark ne ???
+
+
+
 
 
