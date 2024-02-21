@@ -285,3 +285,31 @@ fmt.Printf("%T, %v",a1 && a3 )   // Error  a1 bool , a3 int
 
 /** GO' da   Zero -Non zero ?????
 
+/******** C Dilinde CONSTANT ADRES
+
+#include <stdio.h>
+int main()
+{
+    const  int a = 20 ;
+    int * ptr  = (int*)  &a ;   // legal   AMA YANLIS
+    printf("%p %d", &ptr, *ptr) ;
+    *ptr = 34567 ;  // ub : tanımsız davranıs 
+}
+
+/*  GO Const adresi alınamıyor...
+package main
+import "fmt"
+
+func main() {
+   const   a int = 20 ;
+   ptr :=   &a ;   // invalid operation: cannot take address of a (constant 20 of type int)
+   fmt.Println("%T %v\n", ptr, ptr)
+   fmt.Println("%T %v\n", &a, &a)
+
+}
+
+
+
+
+
+
