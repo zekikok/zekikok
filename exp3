@@ -331,15 +331,12 @@ str := "1"
 */
 
 package main
-
 import "fmt"
-
 func main() {
 	var a, b int
 	fmt.Print("Input two numbers:"); fmt.Scan(&a, &b)
 
 	a *= b + 2 //a = a * (b + 2)
-
 	fmt.Printf("a = %d, b = %d\n", a, b)
 }
 
@@ -348,9 +345,12 @@ func main() {
 
 	Go'da etkisiz ifadeler genel olarak compile time error oluşturur (code has no effect)
 
-------------------------------------------------------------------------------------------------------------------------
-*/
-/*
+package main
+func main() {
+	var a, b = 10, 20
+	a + b //error
+}
+
 ------------------------------------------------------------------------------------------------------------------------
 
 	Deyimler (Statements): Bir programın çalıştırılabilen parçasına denir. Program aslında deyimlerin çalıştırılmasıyla
@@ -372,10 +372,6 @@ func main() {
 
 
 ------------------------------------------------------------------------------------------------------------------------
-*/
-
-/*
-------------------------------------------------------------------------------------------------------------------------
 
 	if deyimi (if statement): if deyimi en temel kontrol deyimidir. if deyiminin genel biçimi şu şekildedir:
 		if [(]<bool türden ifade>[)] {
@@ -389,4 +385,35 @@ func main() {
 
 ------------------------------------------------------------------------------------------------------------------------
 */
+
+func main() }
+
+//  x:= 30
+	 if x := -3 ; x < 0 {
+		fmt.Println(x, " negatif saydir")
+	 else if x%2==0 {
+		fmt.Println(x, " çift saydir")
+	 } else {
+		fmt.Println(x, " tek saydir")
+	 }
+
+    fmt.Println(x)   // Error undefined x ..    x if deyimi içerisinde tanımlanmıs. bu deyime bağlı blokta kullanılabilir. block scope
+
+// En üsteki  x:=30 yazan satırdaki // yı kaldırırsak ekrana 30 yazar...
+
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Anahtar Notlar: Programlamada bir durumu ve doğru ya da yanlış değeri elde edilmesine yol açan kavrama "predicate"
+		denir. Bu anlamda geri dönüş değeri bool olan fonksiyonlar da predicate fonksiyonlardır
+
+Anahtar Notlar: geri dönüş değeri bool olan fonksiyonlar genel olarak is gibi önekler verilerek isimlendirilir. Eğer
+  		fonksiyon ismi bir fiil ise bu durumda o fiil uygun şekilde kullanılır. Örneğin: exists gibi
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
 
