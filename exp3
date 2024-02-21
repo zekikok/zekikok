@@ -320,5 +320,73 @@ str := "1"
 }
 
 
+/*
+------------------------------------------------------------------------------------------------------------------------
 
+	Go'da sonlandırıcı (terminator) bir sonraki satıra geçmek veya ; kullanılabilir. Programcı ;'ü gerekmedikçe tercih
+	etmemelidir. Aşağıdaki örnekte bir sonraki satıra geçilmediği için noktalı virgül kullanılmalıdır. Aksi durumda
+	compile time error oluşur
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+package main
+
+import "fmt"
+
+func main() {
+	var a, b int
+	fmt.Print("Input two numbers:"); fmt.Scan(&a, &b)
+
+	a *= b + 2 //a = a * (b + 2)
+
+	fmt.Printf("a = %d, b = %d\n", a, b)
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+	Go'da etkisiz ifadeler genel olarak compile time error oluşturur (code has no effect)
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+	Deyimler (Statements): Bir programın çalıştırılabilen parçasına denir. Program aslında deyimlerin çalıştırılmasıyla
+	çalışır. Go'da deyimler şunlardır:
+	1. Basit deyimler (simple staments): Bir ifadenin sonuna noktalı virgül konması ve bir sonraki satıra geçilmesi
+	ile oluşan deyimdir. Basit deyim çalıştırıldığında ilgili ifade hesaplanır
+
+	2. Bileşik deyimler (compound statements): Bir bloğa denir. Bu anlamda fonksiyon gövdesi de bir bileşik deyimdir.
+	Bileşik deyim çalıştırıldığında blok içerisindeki tüm deyimler sırasıyla çalıştırılır
+
+	3. Bildirim deyimleri (declaration statements): Değişken bildirimine ilişkin deyimlerdir. Bildirim deyimleri
+	çalıştırıldığında bellekte yer ayrılır
+
+	4. Kontrol deyimleri (control statements): Akışın yönlendirilmesine yol açan deyimlerdir. Her kontrol deyiminin
+	kendine özgü bir çalışma sistematiği vardır. Ayrıca öğrenilmelidir
+
+	5. Boş deyim (Empty/null statement): Aslında Go'da çok kullanılmasa da ;'ün kendisi bir boş deyimdir. Boş deyim
+	çalıştırıldığında hiç bir şey yapılmaz
+
+
+------------------------------------------------------------------------------------------------------------------------
+*/
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+
+	if deyimi (if statement): if deyimi en temel kontrol deyimidir. if deyiminin genel biçimi şu şekildedir:
+		if [(]<bool türden ifade>[)] {
+			//...
+		} [else {
+			//...
+		}]
+
+	Burada {'leri ve varsa else kısmı belirtilen yerinde olmalıdır. Ayrıca if deyiminde (aslında bütün kontrol deyimlerinde)
+	basit deyim yazılamaz. Her zaman bileşik deyim yazılmalıdır. if else kısmıyla birlikte tejk bir deyimdir
+
+------------------------------------------------------------------------------------------------------------------------
+*/
 
