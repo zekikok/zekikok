@@ -190,7 +190,7 @@ Go teknik ingilizce   %  : remainder operatoru
 
 
 /*****************
-var int x := 10
+var  x int = 10
 	fmt.Println(x++)
 
 İfade (expression): Sabitlerden, operatörlerden ve değişkenlerden oluşan dizilimlere denir.
