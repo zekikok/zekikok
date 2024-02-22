@@ -299,10 +299,10 @@ a3 := 20
 fmt.Printf("%T, %v",a1 && a3, a1 && a3 )   // Error  a1 bool , a3 int  
 
 /** GO' da   Zero -Non zero ?????
+ /** Go da   one - non one       1 : True   diğerleri False 
+
+
 /** String to Boolean Conversion
-
-/** Go da   one - non one       1 : True   diğerleri False  
-
 str := "1"      
 	x, _ := strconv.ParseBool(str)
 	fmt.Printf("%T, %v\n", x, x)  // ekrana bool, true yazar
