@@ -296,9 +296,22 @@ a2 := (x < y)
          fmt.Printf("%T, %v\n", a1 && a2, a1 && a2)
 
 a3 := 20
-fmt.Printf("%T, %v",a1 && a3 )   // Error  a1 bool , a3 int  
+fmt.Printf("%T, %v",a1 && a3, a1 && a3 )   // Error  a1 bool , a3 int  
 
 /** GO' da   Zero -Non zero ?????
+/** String to Boolean Conversion
+
+/** Go da   one - non one       1 : True   diğerleri False  
+
+str := "1"      
+	x, _ := strconv.ParseBool(str)
+	fmt.Printf("%T, %v\n", x, x)  // ekrana bool, true yazar
+
+//  str ye "1" dışında atanacak tüm sitringler  false üretiyor ==>  "01", "+1", "2" ,"0", "-1", "3355", "a", "ali", .... gibi
+
+}
+
+
 
 /******** C Dilinde CONSTANT ADRES
 
@@ -321,19 +334,7 @@ func main() {
    fmt.Println("%T %v\n", ptr, ptr)
    fmt.Println("%T %v\n", &a, &a)
 
-}
-/** String to Boolean Conversion
-
-/** Go da   one - non one       1 : True   diğerleri False  
-
-str := "1"      
-	x, _ := strconv.ParseBool(str)
-	fmt.Printf("%T, %v\n", x, x)  // ekrana bool, true yazar
-
-//  str ye "1" dışında atanacak tüm sitringler  false üretiyor ==>  "01", "+1", "2" ,"0", "-1", "3355", "a", "ali", .... gibi
-
-}
-
+} 
 
 /*
 ------------------------------------------------------------------------------------------------------------------------
