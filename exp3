@@ -317,6 +317,22 @@ str := "1"
 
 //  str ye "1" dışında atanacak tüm sitringler  false üretiyor ==>  "01", "+1", "2" ,"0", "-1", "3355", "a", "ali", .... gibi
 
+str := "01"
+	i, _ := strconv.Atoi("01")
+	fmt.Printf("%T, %v\n", i, i)
+	a := (i == 1)
+	fmt.Printf("%T, %v\n", a, a)
+
+	x, _ := strconv.ParseBool(str)
+	fmt.Printf("%T, %v\n", x, x)
+
+	var c bool
+	c = bool(1 == 8)
+	fmt.Printf("%T, %v\n", c, c)
+
+
+
+
 }
 
 
