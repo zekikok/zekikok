@@ -227,7 +227,15 @@ o zaman const a  = ??    (?? burada sabit olmalı)
 const x = 5
 y := x  
   fmt.Printf("%T, %v", y, y)
- 
+
+/* ?????????
+intSize := 12
+const IntSize = intSize  
+
+/* ?????????
+var intSize int = 12    
+const IntSize = intSize  ???
+
 
 /***    TYPELESS CONSTANTS
 /*  Code A
