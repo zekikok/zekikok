@@ -327,7 +327,7 @@ str := "01"
 	fmt.Printf("%T, %v\n", x, x)
 
 	var c bool
-	c = bool(1 == 8)
+	c = bool(1 == i)
 	fmt.Printf("%T, %v\n", c, c)
 
 
