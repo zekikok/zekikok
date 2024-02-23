@@ -73,7 +73,8 @@ func main() {
 	fmt.Println(a, &a)
 
 	// ... code
-	fmt.Println(*ptr, ptr)   // ... code :  burada 0xc000012050 adresi başka bir nesne için kullanılmamışsa  *ptr ile içindeki 5 çöp değeri , kullanılmış ise yeni değeri yazılır 
+
+	fmt.Println(*ptr, ptr)   //   bu noktada 0xc000012050 adresi kullanılmamışsa  *ptr ile içindeki 5 çöp değeri , kullanılmış (bilgi yazılmış) ise yeni değeri ekrana yazılır 
 
 }
 //  örnek çıktı
