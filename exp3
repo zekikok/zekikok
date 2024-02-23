@@ -45,13 +45,13 @@ func scope (main) a=  20
 package main
 import "fmt"
 func main() {
-  a := 5  // a için belleğin stack bölgesinde  bir adres ayrılır ve  o adrese 5  yazılır.  örneğin. 0xc0000aa018 
+  a := 5  // a için belleğin stack bölgesinde  bir adres ayrılır ve  bu adrese 5 degeri yazılır.  örneğin. 0xc0000aa018 ya 
   {
-       a:= 33  // bu a içinde belleğin stack bölgesinde yeni bir adres ayrılır ve değeri o adrese 33 yazılır.  örneğin. 0xc0000aa010
+       a:= 33  // bu a içinde belleğin stack bölgesinde yeni bir adres ayrılır ve 33 değeri o adrese yazılır.  örneğin. 0xc0000aa010 ya
        fmt.Println(a, &a)
   } 
-// Burada blocktn çıkınca 0xc0000aa018 adresi, sisteme kullanılması için geri verilir. bu adreste kalan bilgi artık çöp değerdir. 
-// 
+// Burada blocktan çıkınca 0xc0000aa018 adresi, sisteme kullanılması için geri verilir. (stacktan silinmesi tabiri) bu adreste kalan bilgi artık çöp değerdir. 
+  
   fmt.Println(a, &a)
  
 }
@@ -60,6 +60,7 @@ func main() {
 33 0xc0000aa018  
 5 0xc0000aa010
 
+--------------------------
 package main
 import "fmt"
 func main() {
