@@ -23,11 +23,9 @@ func main() {
 		fmt.Println("block scope   a= ", a)
 		fmt.Println("block scope   b= ", b)
 	}
-
 	fmt.Println("func scope (main) a= ", a)
 
 	foo()
-
 	fmt.Println("func scope (main) a= ", a)
 
   //  fmt.Println("b= ", b)   // compile sırasında  error b tanımlanmamış. yukarıda if blogundaki b,  block scope yani sadece o blokta kullanılabilir.
@@ -44,6 +42,44 @@ func scope (main) a=  20
  
 */
 
+package main
+import "fmt"
+func main() {
+  a := 5  // a için belleğin stack bölgesinde  bir adres ayrılır ve  o adrese 5  yazılır.  örneğin. 0xc0000aa018 
+  {
+       a:= 33  // bu a içinde belleğin stack bölgesinde yeni bir adres ayrılır ve değeri o adrese 33 yazılır.  örneğin. 0xc0000aa010
+       fmt.Println(a, &a)
+  } 
+// Burada blocktn çıkınca 0xc0000aa018 adresi, sisteme kullanılması için geri verilir. bu adreste kalan bilgi artık çöp değerdir. 
+// 
+  fmt.Println(a, &a)
+ 
+}
+
+// ekran çıktısı   
+33 0xc0000aa018  
+5 0xc0000aa010
+
+package main
+import "fmt"
+func main() {
+	a := 5   //  ornegin adres : 0xc000012028 olsun
+	ptr := &a
+	{
+		a := 33 // ornegin adres :  0xc000012050 olsun
+		ptr = &a
+		fmt.Println(a, &a)
+	}
+	fmt.Println(a, &a)
+
+	// ... code
+	fmt.Println(*ptr, ptr)   // ... code :  burada 0xc000012050 adresi başka bir nesne için kullanılmamışsa  *ptr ile içindeki 5 çöp değeri , kullanılmış ise yeni değeri yazılır 
+
+}
+//  örnek çıktı
+33 0xc000012050
+5 0xc000012028
+33 0xc000012050   
 
 // ***    type conversion ***
 package main
