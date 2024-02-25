@@ -50,7 +50,7 @@ func main() {
        a:= 33  // bu a içinde belleğin stack bölgesinde yeni bir adres ayrılır ve 33 değeri o adrese yazılır.  örneğin. 0xc0000aa010 ya
        fmt.Println(a, &a)
   } 
-// Burada blocktan çıkınca 0xc0000aa018 adresi, sisteme kullanılması için geri verilir. (stacktan silinmesi tabiri) bu adreste kalan bilgi artık çöp değerdir. 
+// Burada blocktan çıkınca 0xc0000aa010 adresi, sisteme kullanılması için geri verilir. (stacktan silinmesi tabiri) bu adreste kalan bilgi artık çöp değerdir. 
   
   fmt.Println(a, &a)
  
@@ -268,7 +268,7 @@ a2 := (x < y)
 a3 := 20
 fmt.Printf("%T, %v",a1 && a3, a1 && a3 )   // Error  a1 bool , a3 int  
 
-/** GO' da   Zero -Non zero ?????
+/** C da   Zero -Non zero ?????
  /** Go da   one - non one       1 : True   diğerleri False 
 
 
